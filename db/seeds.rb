@@ -11,7 +11,7 @@ User.all.each do |user|
     position = user.positions.create!(title: Faker::Name.title,
                                       salary: salary,
                                       started_at: Time.now - rand(100..500).days,
-                                      ended_at: Time.now - rand(1..50).days)
+                                      ended_at: Time.now - rand(-50..50).days)
 
     position.evaluations.create!(summary: Faker::Lorem.paragraphs(rand(1..4)).join("\n"),
                                  probation: [true, false, false, false].sample)
